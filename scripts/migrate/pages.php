@@ -34,7 +34,7 @@ $clean = function ( string $html ) use ( $allowed ): string {
 
 /** Elementor widgets → content (headings + text). Lorem-ipsum testimonials, buttons and forms dropped. */
 $convert = function ( int $id, bool $skip_first_heading, callable $keep ) use ( $clean ): array {
-	$raw   = get_post_meta( $id, '_elementor_data', true );
+	$raw   = get_post_meta( $id, '_elementor_data', true ) ?: get_post_meta( $id, '_silq_legacy_elementor_data', true ); // re-runs read the backup
 	$data  = is_array( $raw ) ? $raw : json_decode( (string) $raw, true );
 	$out   = '';
 	$first = array();

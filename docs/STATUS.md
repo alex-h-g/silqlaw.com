@@ -1,6 +1,6 @@
 # Status
 
-_Last updated: 4 Nov 2026 (night)_
+_Last updated: 4 Nov 2026 (late night)_
 
 ## Done
 - Audit, repo, docs, media originals (`media/uploads/`), local dev copy (`scripts/local/`).
@@ -16,6 +16,14 @@ _Last updated: 4 Nov 2026 (night)_
   - `scripts/migrate/new-pages.php` — Construction & Property Development (`content/construction-property-development.html`, ID set at run time).
   - `scripts/migrate/cleanup.php` — trash demo pages + themo_portfolio; delete form 15; fix form 5 actions; remove Polylang; tagline.
   - `theme/silq/inc/redirects.php` — 301 map (old `/services/*`, merged real estate, retired pages).
+
+- Pages: team, profile, contact templates; About, International Support, Thank You rewritten (`content/`);
+  language pages + terms converted (lorem-ipsum testimonials removed); `scripts/migrate/pages.php` (re-runnable).
+- Articles: theme author cards only (PublishPress box hidden; PublishPress stays for assigning authors).
+- Cleanup also: SILQ author bio, unused Font Awesome snippet off. Orphan uploads script (moves, never deletes).
+- Lighthouse desktop (local php -S, no compression, original-size images): 92–100 perf, 100 a11y, 100 best practices, 92–100 SEO.
+- Tested on staging2 by Alex (4 Nov): design approved.
+- `docs/LAUNCH.md` written.
 
 ## Next
 1. Copy pass on service pages: summaries/meta descriptions, FAQs + FAQPage schema on every page (none exist today).
