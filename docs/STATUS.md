@@ -18,8 +18,8 @@ _Last updated: 4 Nov 2026 (night)_
 4. Lighthouse; staging2 preview; launch plan.
 
 ## Open items for Alex
-- Approve the horizontal logo lockup (mark + wordmark side by side, built from the existing logo).
-- Penny's photo (12051) is a casual crop — is there a professional portrait?
+- Logo: horizontal lockup approved; all-white on navy.
+- Penny's photo (12051) is a placeholder until a professional portrait is taken.
 - Live homepage shows +66 2 107 1882; Contact page shows +66 89 920 4451. Theme uses the latter.
 - About page offers a "Free Consultation" — keep that offer?
 - Fix live Contact Us form actions (127.0.0.1 redirect; recipients).
