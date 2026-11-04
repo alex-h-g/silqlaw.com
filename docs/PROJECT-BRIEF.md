@@ -30,3 +30,11 @@ strong SEO structure, no lost functionality. Rebranded and re-pointed at SILQ's 
 - Privacy policy + cookie policy pages, linked in footer (PDPA, CookieYes).
 - Search Console access for sitemap resubmission and 404 monitoring.
 - Review SiteGround Speed Optimizer against the theme's asset handling (compare mufasa.co.th settings).
+
+## SiteGround Speed Optimizer (copy mufasa.co.th, 100/100)
+Dynamic cache on · file-based cache on · Memcached off · minify CSS on · combine CSS off · minify JS off ·
+combine JS off · defer render-blocking JS on (2 exclusions — TBC) · minify HTML on · web fonts optimisation off.
+Media tab: TBC.
+
+## Access
+SSH key on Alex's Mac (Neo): `~/.ssh/siteground_silq` (use `-o IdentitiesOnly=yes`, port 18765). Username/host TBC.
