@@ -109,6 +109,19 @@ if ( $silq_author ) {
 	$do( 'author SILQ → plain bio', fn() => update_term_meta( $silq_author->term_id, 'description', 'Articles by the lawyers of SILQ Law on changes in Thai law and what they mean for businesses, investors and families in Thailand.' ) );
 }
 
+// 5b2. Articles credited to Dr Paul Crosio → SILQ (PublishPress author terms).
+$paul = get_term_by( 'slug', 'dr-paul-crosio', 'author' );
+if ( $paul && $silq_author ) {
+	$posts = get_objects_in_term( $paul->term_id, 'author' );
+	foreach ( (array) $posts as $pid ) {
+		$do( "post {$pid}: author Dr Paul Crosio → SILQ", function () use ( $pid, $paul, $silq_author ) {
+			wp_remove_object_terms( (int) $pid, (int) $paul->term_id, 'author' );
+			wp_add_object_terms( (int) $pid, (int) $silq_author->term_id, 'author' );
+			clean_post_cache( (int) $pid );
+		} );
+	}
+}
+
 // 5c. Code Snippet "FontAwesome" loads a render-blocking third-party kit on every page; nothing on the new site uses it.
 $snip = $wpdb->prefix . 'snippets';
 if ( $wpdb->get_var( "SHOW TABLES LIKE '{$snip}'" ) === $snip && (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$snip} WHERE active = 1 AND code LIKE '%kit.fontawesome.com%'" ) ) {
