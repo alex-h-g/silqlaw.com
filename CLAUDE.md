@@ -15,6 +15,6 @@
 - Do not lose existing functionality: Formidable forms + entries, enquiry emails, Line contact, GA4 (Site Kit), CookieYes, PublishPress Authors, redirects.
 - Launch pushes theme + page/taxonomy migrations only. Never restore a DB over live.
 - Migrations: same IDs, slugs, Yoast fields; old Elementor JSON kept as backup meta; dry run by default, `commit` to write.
-- Never commit DB dumps, wp-config, credentials, plugin zips or uploads.
+- Never commit DB dumps, wp-config, credentials or plugin zips. Original images live in `media/uploads/` (no resized copies).
 - If something is unclear or risky, stop and ask Alex. Alex signs off all pages; bulk rewrites OK.
 - Alex prefers exact copy-paste terminal commands and drop-in replacement files.
