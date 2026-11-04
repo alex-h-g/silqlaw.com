@@ -50,3 +50,25 @@ add_filter( 'language_attributes', function ( $output ) {
 	}
 	return $output;
 } );
+
+// Meta description fallback: when a page has no Yoast description, use its standfirst/lead, else the first words of the content.
+add_filter( 'wpseo_metadesc', function ( $desc ) {
+	if ( $desc || ! is_singular() ) {
+		return $desc;
+	}
+	$id    = get_queried_object_id();
+	$fixed = array(
+		'page-contact.php'        => 'Contact SILQ Law by phone, WhatsApp, Line or email, or send a message. Offices on the Eastern Seaboard (Pratamnak Hill) and in Phuket. We reply within one business day.',
+		'page-team.php'           => 'Meet the lawyers of SILQ Law: Thai and international lawyers working in English and Thai, with offices on the Eastern Seaboard and in Phuket.',
+		'page-insights.php'       => 'Plain-English news and updates on Thai law for business owners, investors and people living in Thailand, from the lawyers of SILQ Law.',
+		'page-practice-index.php' => 'Legal help in Thailand for business owners, investors and families: company formation, BOI, property, construction, visas, licences and disputes.',
+	);
+	if ( isset( $fixed[ get_page_template_slug( $id ) ] ) ) {
+		return $fixed[ get_page_template_slug( $id ) ];
+	}
+	$text = get_post_meta( $id, '_silq_standfirst', true ) ?: get_post_meta( $id, '_silq_lead', true ) ?: ( has_excerpt( $id ) ? get_the_excerpt( $id ) : '' );
+	if ( ! $text ) {
+		$text = wp_trim_words( wp_strip_all_tags( strip_shortcodes( (string) get_post_field( 'post_content', $id ) ) ), 28, '…' );
+	}
+	return $text ? wp_html_excerpt( $text, 158, '…' ) : $desc;
+} );

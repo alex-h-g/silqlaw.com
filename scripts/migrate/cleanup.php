@@ -109,6 +109,12 @@ if ( $silq_author ) {
 	$do( 'author SILQ → plain bio', fn() => update_term_meta( $silq_author->term_id, 'description', 'Articles by the lawyers of SILQ Law on changes in Thai law and what they mean for businesses, investors and families in Thailand.' ) );
 }
 
+// 5c. Code Snippet "FontAwesome" loads a render-blocking third-party kit on every page; nothing on the new site uses it.
+$snip = $wpdb->prefix . 'snippets';
+if ( $wpdb->get_var( "SHOW TABLES LIKE '{$snip}'" ) === $snip && (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$snip} WHERE active = 1 AND code LIKE '%kit.fontawesome.com%'" ) ) {
+	$do( 'deactivate Font Awesome code snippet', fn() => $wpdb->query( "UPDATE {$snip} SET active = 0 WHERE code LIKE '%kit.fontawesome.com%'" ) );
+}
+
 // 6. Tagline.
 if ( 'Real Advice, Real Results' !== get_option( 'blogdescription' ) ) {
 	$do( 'tagline → Real Advice, Real Results', fn() => update_option( 'blogdescription', 'Real Advice, Real Results' ) );
