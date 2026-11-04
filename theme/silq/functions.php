@@ -17,3 +17,4 @@ require_once SILQ_DIR . '/inc/assets.php';
 require_once SILQ_DIR . '/inc/template-tags.php';
 require_once SILQ_DIR . '/inc/practice.php';
 require_once SILQ_DIR . '/inc/insights.php';
+require_once SILQ_DIR . '/inc/redirects.php';

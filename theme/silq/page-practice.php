@@ -23,7 +23,8 @@ $related    = silq_related_insights( $slug );
 	<?php endif; ?>
 	<div class="wrap page-hero__content">
 		<?php silq_breadcrumbs(); ?>
-		<?php if ( $group ) : ?><p class="eyebrow eyebrow--light"><?php echo esc_html( $group ); ?></p><?php endif; ?>
+		<?php $eyebrow = get_post_meta( get_the_ID(), '_silq_eyebrow', true ) ?: $group; ?>
+		<?php if ( $eyebrow ) : ?><p class="eyebrow eyebrow--light"><?php echo esc_html( $eyebrow ); ?></p><?php endif; ?>
 		<h1 class="page-hero__title"><?php echo esc_html( $headline ); ?></h1>
 		<?php if ( $standfirst ) : ?><p class="page-hero__lead"><?php echo esc_html( $standfirst ); ?></p><?php endif; ?>
 	</div>
