@@ -10,11 +10,16 @@ _Last updated: 4 Nov 2026 (night)_
   S·I·L·Q values, news, founder, offices/contact); services index with group chips; service template; topics.
 - Removed from the FOSR build: awards template, ads attribution script, EN/TH pairing (site is English-only).
 
+- Migrations (tested on the local copy, dry run by default):
+  - `scripts/migrate/services.php` — 18 Elementor service pages → clean content on the service template, hero from the
+    opening widget, interactive tools kept, featured images set; real estate pages merged (12012 keeps `/real-estate/`, 11966 trashed).
+  - `scripts/migrate/new-pages.php` — Construction & Property Development (`content/construction-property-development.html`, ID set at run time).
+  - `scripts/migrate/cleanup.php` — trash demo pages + themo_portfolio; delete form 15; fix form 5 actions; remove Polylang; tagline.
+  - `theme/silq/inc/redirects.php` — 301 map (old `/services/*`, merged real estate, retired pages).
+
 ## Next
-1. Migration: `/our-services/` children → clean content + service template; featured images; merge real estate pages;
-   new Construction & Property Development page; 301s `/services/*` → `/our-services/*`; trash demo pages and unused forms.
-2. Polylang removal script (language terms, `pll_` options, menu flags).
-3. News & Updates page template, article template checks, About/Team/Contact/International Support restyle.
+1. Copy pass on service pages: summaries/meta descriptions, FAQs + FAQPage schema on every page (none exist today).
+2. News & Updates page template, article template checks, About/Team/Contact/International Support restyle.
 4. Lighthouse; staging2 preview; launch plan.
 
 ## Open items for Alex
@@ -22,4 +27,5 @@ _Last updated: 4 Nov 2026 (night)_
 - Penny's photo (12051) is a placeholder until a professional portrait is taken.
 - Live homepage shows +66 2 107 1882; Contact page shows +66 89 920 4451. Theme uses the latter.
 - About page offers a "Free Consultation" — keep that offer?
-- Fix live Contact Us form actions (127.0.0.1 redirect; recipients).
+- Live Contact Us form: 127.0.0.1 redirect + recipients (fixed by cleanup.php at launch, or by hand now).
+- A few article images have "fosr" in their file names (e.g. 2026/06/FOSR-Blog-Post-…). Visible only in image URLs.
