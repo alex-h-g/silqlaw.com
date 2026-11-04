@@ -115,6 +115,16 @@ function silq_partners(): array {
 	);
 }
 
+/** Team, in display order. Profile pages are children of /our-team/. */
+function silq_team(): array {
+	return array(
+		array( 'name' => 'Penny Namno', 'role' => 'Founder & Managing Partner', 'office' => '', 'slug' => 'penny-namno-founder-managing-partner', 'img' => 12051 ),
+		array( 'name' => 'Dr. Andrew Paziuk', 'role' => 'Managing Partner', 'office' => 'Phuket', 'slug' => 'andrew-paziuk-managing-partner-phuket', 'img' => 1291 ),
+		array( 'name' => 'Kanta Kanvichit', 'role' => 'Associate', 'office' => 'Phuket', 'slug' => 'kanta-associate', 'img' => 1296 ),
+		array( 'name' => 'Nawatchapon (Butter) Ngarmtaranakit', 'role' => 'Associate', 'office' => 'Phuket', 'slug' => 'butter-associate', 'img' => 1298 ),
+	);
+}
+
 /** Primary navigation. */
 function silq_nav_items(): array {
 	return array(

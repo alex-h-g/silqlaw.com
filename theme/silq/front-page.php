@@ -58,7 +58,6 @@ $insights = new WP_Query(
 	)
 );
 $founder = silq_partners()[0];
-$contact = silq_contact();
 ?>
 
 <section class="hero">
@@ -191,26 +190,7 @@ $contact = silq_contact();
 	</div>
 </section>
 
-<section class="section section--mist">
-	<div class="wrap contact-band">
-		<div>
-			<h2>Talk to us</h2>
-			<p>Not sure where to start? Tell us what you are planning or what has happened. We will explain your options in plain language and reply within one business day.</p>
-			<div class="offices">
-				<?php foreach ( $contact['offices'] as $o ) : ?>
-					<div>
-						<h3><?php echo esc_html( $o['name'] ); ?></h3>
-						<p><?php echo esc_html( $o['address'] ); ?></p>
-					</div>
-				<?php endforeach; ?>
-			</div>
-		</div>
-		<div>
-			<?php silq_contact_list( 'contact-band__list' ); ?>
-			<p><a class="button" href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>">Contact us <?php echo silq_icon( 'arrow' ); // phpcs:ignore ?></a></p>
-		</div>
-	</div>
-</section>
+<?php get_template_part( 'template-parts/contact-band' ); ?>
 
 <?php
 get_footer();

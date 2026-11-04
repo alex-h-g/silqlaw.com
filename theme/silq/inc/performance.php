@@ -105,10 +105,11 @@ function silq_page_has_form(): bool {
 		return false;
 	}
 	$id      = get_queried_object_id();
-	if ( 'page-practice.php' === get_page_template_slug( $id ) ) {
+	if ( in_array( get_page_template_slug( $id ), array( 'page-practice.php', 'page-contact.php' ), true ) ) {
 		return true;
 	}
 	$content = (string) get_post_field( 'post_content', $id );
-	$data    = (string) get_post_meta( $id, '_elementor_data', true );
+	$data    = get_post_meta( $id, '_elementor_data', true );
+	$data    = is_string( $data ) ? $data : (string) wp_json_encode( $data );
 	return str_contains( $content, '[formidable' ) || str_contains( $data, 'formidable' );
 }

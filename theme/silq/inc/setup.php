@@ -39,3 +39,14 @@ add_action( 'init', function () {
 add_filter( 'comments_open', '__return_false', 20 );
 add_filter( 'pings_open', '__return_false', 20 );
 add_filter( 'comments_array', '__return_empty_array', 10 );
+
+// Language pages (Italian, Ukrainian, Russian, Thai) declare their language for browsers, screen readers and search engines.
+add_filter( 'language_attributes', function ( $output ) {
+	if ( is_singular() ) {
+		$lang = get_post_meta( get_queried_object_id(), '_silq_lang', true );
+		if ( $lang && preg_match( '/^[a-z]{2}$/', $lang ) ) {
+			$output = preg_replace( '/lang="[^"]*"/', 'lang="' . $lang . '"', $output );
+		}
+	}
+	return $output;
+} );

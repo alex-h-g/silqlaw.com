@@ -19,8 +19,8 @@ $is_elementor = 'builder' === get_post_meta( get_the_ID(), '_elementor_edit_mode
 $banner       = $is_elementor ? silq_legacy_banner( get_the_ID() ) : null;
 
 if ( ! $is_elementor || $banner ) :
-	$title = $banner['title'] ?? get_the_title();
-	$lead  = $banner['lead'] ?? ( has_excerpt() ? get_the_excerpt() : '' );
+	$title = $banner['title'] ?? ( get_post_meta( get_the_ID(), '_silq_headline', true ) ?: get_the_title() );
+	$lead  = $banner['lead'] ?? ( get_post_meta( get_the_ID(), '_silq_lead', true ) ?: ( has_excerpt() ? get_the_excerpt() : '' ) );
 	?>
 	<header class="page-hero page-hero--plain">
 		<div class="wrap page-hero__content">

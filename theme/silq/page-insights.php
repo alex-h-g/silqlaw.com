@@ -25,7 +25,7 @@ set_query_var( 'paged', $paged );
 <header class="page-hero page-hero--plain">
 	<div class="wrap page-hero__content">
 		<?php silq_breadcrumbs(); ?>
-		<h1 class="page-hero__title">News &amp; legal updates</h1>
+		<h1 class="page-hero__title">News &amp; updates</h1>
 		<p class="page-hero__lead">Plain-English updates on Thai law for business owners, investors and people living in Thailand.</p>
 	</div>
 </header>
