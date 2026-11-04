@@ -41,3 +41,14 @@ Drop-ins: advanced-cache.php, maintenance.php, object-cache.php.
 - Polylang, connect-polylang-elementor and menu-icons (flags) go with the Polylang removal.
 - cookie-law-info inactive → configure CookieYes.
 - Site Kit active but GA not connected → find the tag source.
+
+## Found on the local copy (4 Nov, evening)
+- Practice areas were rebuilt in Aug 2026 as 18 Elementor child pages of `/our-services/` (ID 51): 12 practices + 6 industries.
+  The 12 `themo_portfolio` `/services/` entries are orphaned. Duplicate: `real-estate` (11966, thin) vs `real-estate-property` (12012, full).
+- Logo attachment 888 `2025/09/SILQ-Yellow-Blue-Final.png`: navy #001871, green #009E5E. Favicon 1244.
+- Only form 5 "Contact Us" is used (18 entries). Others have 0 entries.
+- **Form 5 bug:** two Confirmation actions on create — one shows a message, one redirects to `http://127.0.0.1/thank-you/`.
+  Email action sends to [default-email], info@silqlaw.com and an external address — Alex wants alex@ + paul@silqlaw.com.
+- Contact: +66 89 920 4451 (phone/WhatsApp), info@silqlaw.com, Line @700bjyao.
+  Offices: EEC — 2nd Floor, The Atrium, Soi 5, Pratamnak Hill, Bang Lamung, Chonburi 20150; Phuket — 147 Moo 6, Cherngtalay, Thalang, Phuket 83110.
+- Remove: Shop, Shop + Sidebar, My Account, Contact 2, Careers, unused forms. Keep the language About pages under International Support (no Polylang).
