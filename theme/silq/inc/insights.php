@@ -148,3 +148,8 @@ add_filter( 'the_content', function ( $content ) {
 		$content
 	);
 }, 20 );
+
+// The theme renders its own author cards on articles; stop PublishPress Authors appending its box to the content.
+add_filter( 'pp_multiple_authors_filter_should_display_author_box', function ( $display ) {
+	return is_admin() ? $display : false;
+} );

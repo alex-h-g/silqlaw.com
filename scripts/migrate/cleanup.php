@@ -103,6 +103,12 @@ foreach ( array( 'polylang/polylang.php', 'connect-polylang-elementor/connect-po
 	}
 }
 
+// 5b. SILQ author bio (PublishPress Authors): replace the pasted Elementor markup with a short plain bio.
+$silq_author = get_term_by( 'slug', 'silq', 'author' );
+if ( $silq_author ) {
+	$do( 'author SILQ → plain bio', fn() => update_term_meta( $silq_author->term_id, 'description', 'Articles by the lawyers of SILQ Law on changes in Thai law and what they mean for businesses, investors and families in Thailand.' ) );
+}
+
 // 6. Tagline.
 if ( 'Real Advice, Real Results' !== get_option( 'blogdescription' ) ) {
 	$do( 'tagline → Real Advice, Real Results', fn() => update_option( 'blogdescription', 'Real Advice, Real Results' ) );
