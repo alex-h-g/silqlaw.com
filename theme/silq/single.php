@@ -85,7 +85,7 @@ $related = new WP_Query(
 			<div class="authors">
 				<?php foreach ( $authors as $a ) : ?>
 					<div class="author">
-						<?php if ( $a['img'] ) : ?><img class="author__img" src="<?php echo esc_url( $a['img'] ); ?>" alt="" width="64" height="64" loading="lazy"><?php endif; ?>
+						<?php if ( $a['img'] ) : ?><img class="author__img" src="<?php echo esc_url( $a['img'] ); ?>" alt="" width="64" height="64" loading="lazy"><?php else : ?><span class="author__img author__img--initials" aria-hidden="true"><?php echo esc_html( implode( '', array_map( fn( $w ) => mb_substr( $w, 0, 1 ), array_slice( preg_split( '/\s+/', trim( preg_replace( '/^(Dr|Mr|Ms|Mrs)\.?\s+/i', '', $a['name'] ) ) ), 0, 2 ) ) ) ); ?></span><?php endif; ?>
 						<div>
 							<p class="author__name"><a href="<?php echo esc_url( $a['url'] ); ?>"><?php echo esc_html( $a['name'] ); ?></a></p>
 							<?php if ( $a['bio'] ) : ?><p class="author__bio"><?php echo esc_html( wp_trim_words( $a['bio'], 40 ) ); ?></p><?php endif; ?>

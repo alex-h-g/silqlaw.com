@@ -82,10 +82,9 @@ function silq_post_authors( int $id = 0 ): array {
 	$out = array();
 	if ( function_exists( 'get_post_authors' ) ) {
 		foreach ( get_post_authors( $id ) as $a ) {
-			$img = method_exists( $a, 'get_avatar_url' ) ? $a->get_avatar_url( 160 ) : '';
-			if ( is_array( $img ) ) {
-				$img = $img['url'] ?? '';
-			}
+			// Only a photo uploaded in PublishPress Authors; otherwise the card shows the author's initials.
+			$avatar = ! empty( $a->term_id ) ? (int) get_term_meta( $a->term_id, 'avatar', true ) : 0;
+			$img    = $avatar ? (string) wp_get_attachment_image_url( $avatar, 'thumbnail' ) : '';
 			$out[] = array(
 				'name' => (string) $a->display_name,
 				'url'  => (string) $a->link,
