@@ -58,7 +58,7 @@ $contact = silq_contact();
 	</div>
 
 	<div class="wrap site-footer__base">
-		<p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> SILQ Law</p>
+		<p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> SILQ Royal Co., Ltd.</p>
 		<ul class="link-list link-list--inline">
 			<li><a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>">Privacy</a></li>
 			<li><a href="<?php echo esc_url( home_url( '/about-us/terms-and-conditions-engagement/' ) ); ?>">Terms of engagement</a></li>
