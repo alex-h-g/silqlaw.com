@@ -11,7 +11,11 @@ get_header();
 
 $title = '';
 $lead  = '';
-if ( is_tag() || is_category() ) {
+if ( is_tag() ) {
+	$term  = get_queried_object();
+	$title = silq_topic_label( $term );
+	$lead  = term_description() ?: sprintf( '%d %s on %s from the lawyers of SILQ.', (int) $term->count, 1 === (int) $term->count ? 'article' : 'articles', $title );
+} elseif ( is_category() ) {
 	$title = single_term_title( '', false );
 	$lead  = term_description();
 } elseif ( is_author() ) {

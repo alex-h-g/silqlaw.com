@@ -126,7 +126,10 @@ function silq_breadcrumbs(): void {
 		$crumbs[] = array( get_the_title(), '' );
 	} elseif ( is_tag() || is_category() ) {
 		$crumbs[] = array( 'News & Updates', home_url( '/news-and-updates/' ) );
-		$crumbs[] = array( single_term_title( '', false ), '' );
+		if ( is_tag() ) {
+			$crumbs[] = array( 'Topics', home_url( '/topics/' ) );
+		}
+		$crumbs[] = array( is_tag() ? silq_topic_label( get_queried_object() ) : single_term_title( '', false ), '' );
 	} elseif ( is_author() ) {
 		$crumbs[] = array( 'News & Updates', home_url( '/news-and-updates/' ) );
 		$crumbs[] = array( get_the_author_meta( 'display_name', get_queried_object_id() ), '' );

@@ -561,3 +561,13 @@ blockquote { margin: 0; }
 /* Firm logo used as an author avatar: show the whole mark, no crop. */
 .author__img[src*="SILQ"], .author__img[src*="silq"], .author__img[src*="logo"] { object-fit: contain; padding: 6px; }
 .author__img--initials { display: grid; place-items: center; background: var(--mist); color: var(--ink); font-family: var(--font-serif); font-weight: 600; font-size: 1.25rem; }
+
+/* Topics */
+.chip--more { border-color: var(--accent); color: var(--accent); display: inline-flex; align-items: center; gap: 0.35rem; }
+.chip--more .icon { width: 16px; height: 16px; }
+.chip__count { color: var(--slate); font-size: 0.85em; margin-left: 0.2rem; }
+.topics h2 { font-size: var(--step-2); margin: var(--space-l) 0 var(--space-s); }
+.topics h2:first-child { margin-top: 0; }
+.topic-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.topic-list--popular .chip { font-size: var(--step-0); padding: 0.65rem 1.2rem; }
+.topics__search { margin-top: var(--space-l); max-width: 34rem; }

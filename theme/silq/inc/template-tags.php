@@ -14,9 +14,9 @@ const SILQ_HERO_ID = 195;   // 2025/02/bkk-skyline-sunrise.webp
 /** Firm contact details, used in header, footer, service pages and schema. */
 function silq_contact(): array {
 	return array(
-		'phone'      => '+66 89 920 4451',
-		'phone_href' => 'tel:+66899204451',
-		'whatsapp'   => 'https://wa.me/66899204451',
+		'phone'      => '+66 92 258 4527',
+		'phone_href' => 'tel:+66922584527',
+		'whatsapp'   => 'https://wa.me/66922584527',
 		'email'      => 'info@silqlaw.com',
 		'line'       => '@700bjyao',
 		'line_href'  => 'https://line.me/R/ti/p/@700bjyao',

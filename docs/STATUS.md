@@ -25,6 +25,11 @@ _Last updated: 4 Nov 2026 (late night)_
 - Tested on staging2 by Alex (4 Nov): design approved.
 - `docs/LAUNCH.md` written.
 
+- Live 4 Nov. 5 Nov fixes: privacy policy / firm identity (`scripts/fix/firm-identity.php`); topic buttons trimmed to the
+  top 7 + new `/topics/` page; old Elementor Theme Builder header/footer/tag-archive templates drafted (they overrode tag pages);
+  phone → +66 92 258 4527 (`scripts/fix/round2.php`); editor warning on articles without headings.
+- Articles with no headings (10): 12111, 1309, 1435, 1444, 1485, 9045, 10050, 10052, 10293, 11015.
+
 ## Next
 1. Copy pass on service pages: summaries/meta descriptions, FAQs + FAQPage schema on every page (none exist today).
 2. News & Updates page template, article template checks, About/Team/Contact/International Support restyle.

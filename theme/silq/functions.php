@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SILQ_VERSION', '0.1.1' );
+define( 'SILQ_VERSION', '0.1.2' );
 define( 'SILQ_DIR', get_stylesheet_directory() );
 define( 'SILQ_URI', get_stylesheet_directory_uri() );
 
