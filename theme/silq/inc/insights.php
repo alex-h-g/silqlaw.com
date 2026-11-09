@@ -18,6 +18,7 @@ function silq_topics(): array {
 		'nominee'            => 'Nominee',
 		'boi'                => 'BOI',
 		'bankruptcy'         => 'Bankruptcy',
+		'cannabis-en'        => 'Cannabis',
 	);
 }
 
