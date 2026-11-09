@@ -10,13 +10,14 @@ defined( 'ABSPATH' ) || exit;
 /** Topic buttons on News & Updates (tag slug => friendly label): the most-used topics only. Everything else is on /topics/. */
 function silq_topics(): array {
 	return array(
-		'real-estate-en'     => 'Property',
+		'real-estate-en'     => 'Real Estate',
 		'foreign-investment' => 'Foreign Investment',
-		'dbd'                => 'Company Registration',
-		'business-law'       => 'Business Law',
-		'visa'               => 'Visas',
-		'nominee'            => 'Nominee Rules',
-		'tourism'            => 'Tourism & Hotels',
+		'dbd'                => 'DBD',
+		'tourism'            => 'Tourism',
+		'visa'               => 'Visa',
+		'nominee'            => 'Nominee',
+		'boi'                => 'BOI',
+		'bankruptcy'         => 'Bankruptcy',
 	);
 }
 
