@@ -77,7 +77,7 @@ while ( $queue && $pages < 1500 ) {
 	foreach ( $m as $hit ) {
 		$raw  = $hit[1] ?: ( $hit[2] ?? '' );
 		$link = $norm( $raw, $url );
-		if ( ! $link || preg_match( '#/(wp-json|xmlrpc\.php|wp-admin|wp-login\.php|feed|comments/feed)\b|\?(s|replytocom|p)=|/wp-includes/#', $link ) ) {
+		if ( ! $link || preg_match( '#/(cdn-cgi|wp-json|xmlrpc\.php|wp-admin|wp-login\.php|feed|comments/feed)\b|\?(s|replytocom|p)=|/wp-includes/#', $link ) ) {
 			continue;
 		}
 		if ( $wrong_host( $link ) ) {

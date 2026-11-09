@@ -29,6 +29,12 @@ $images = array(
 	'2025/07/importing-alcohol-reduced-421x1024.webp'                         => '2026/06/importing-alcohol-reduced-scaled-1.webp',
 	'2025/10/Draft-Startup-Promotion-and-Development-Act-%E2%80%94-Summary.png' => '2026/06/Draft-Startup-Promotion-and-Development-Act-%E2%80%94-Summary.png',
 	'2025/10/Draft-Startup-Promotion-and-Development-Act-—-Summary.png'      => '2026/06/Draft-Startup-Promotion-and-Development-Act-—-Summary.png',
+	// Resized copies that were never generated; the media-library copies below are byte-identical originals (checked 9 Nov).
+	'2025/11/fba-article-infographic-791x1024.png'                            => '2026/06/fba-article-infographic-2.png',
+	'2025/08/visa-thailand-1024x683.webp'                                     => '2026/06/visa-thailand.webp',
+	'2025/07/facial-pdpa-infographic-629x1024.png'                            => '2026/06/facial-pdpa-infographic.png',
+	'2025/07/boi-incentives-sme-infographic-735x1024.png'                     => '2026/06/boi-incentives-sme-infographic.png',
+	'2025/06/real-estate-infographic-471x1024.png'                            => '2026/06/real-estate-infographic.png',
 );
 foreach ( $images as $from => $to ) {
 	$from_file = $uploads['basedir'] . '/' . rawurldecode( $from );
