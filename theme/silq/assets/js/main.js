@@ -1,4 +1,4 @@
-// FOSR front-end script. Vanilla, deferred, no dependencies.
+// SILQ front-end script. Vanilla, deferred, no dependencies.
 (() => {
 	const toggle = document.querySelector('[data-nav-toggle]');
 	const nav = document.querySelector('[data-nav]');
@@ -26,4 +26,22 @@
 			});
 		});
 	});
+})();
+
+// Mobile contact bar: "Menu" opens the main navigation; hide the bar while typing so it never covers a form field.
+(() => {
+	const bar = document.querySelector('[data-mobile-bar]');
+	if (!bar) return;
+	const btn = bar.querySelector('[data-mobile-menu]');
+	const toggle = document.querySelector('[data-nav-toggle]');
+	if (btn && toggle) {
+		btn.addEventListener('click', () => {
+			toggle.click();
+			btn.setAttribute('aria-expanded', toggle.getAttribute('aria-expanded'));
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		});
+	}
+	const typing = (e) => e.target.matches && e.target.matches('input:not([type=checkbox]):not([type=radio]):not([type=submit]), textarea, select');
+	document.addEventListener('focusin', (e) => { if (typing(e)) bar.dataset.hidden = ''; });
+	document.addEventListener('focusout', (e) => { if (typing(e)) delete bar.dataset.hidden; });
 })();

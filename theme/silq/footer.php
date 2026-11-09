@@ -67,6 +67,7 @@ $contact = silq_contact();
 	</div>
 </footer>
 
+<?php silq_mobile_bar(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

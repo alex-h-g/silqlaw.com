@@ -20,7 +20,7 @@ $c = silq_contact();
 	</div>
 </header>
 
-<section class="section">
+<section class="section" id="enquiry">
 	<div class="wrap enquiry">
 		<div class="enquiry__intro">
 			<h2>Call, message or email</h2>
@@ -36,7 +36,7 @@ $c = silq_contact();
 			</div>
 			<p class="small">Meetings by appointment.</p>
 		</div>
-		<div class="enquiry__form">
+		<div class="enquiry__form" id="enquiry-form">
 			<h2>Send us a message</h2>
 			<?php echo do_shortcode( '[formidable id=5]' ); // phpcs:ignore ?>
 		</div>
